@@ -1,0 +1,61 @@
+ThreadLocal is useful, when you want to have some state that should not be shared amongst different threads, but it should be accessible from each thread during its whole lifetime.
+
+This gives us the ability to store data individually for the current thread – and simply wrap it within a special type of object.
+
+Spring uses threadLocal in its contextHolder classes. e.g. RequestContextHolder
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Asynchronous API - Callbacks
+
+What is CompletableFuture?
+A CompltableFuture is used for asynchronous programming. Asynchronous programming means writing non-blocking code. I
+t runs a task on a separate thread than the main application thread and notifies the main thread about its progress, completion or failure.
+In this way, the main thread does not block or wait for the completion of the task. Other tasks execute in parallel. 
+Parallelism improves the performance of the program.A CompletableFuture is a class in Java. 
+It belongs to java.util.cocurrent package. It implements CompletionStage and Future interface.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+lock's condition class -java wait notify are same as condition.Await() condition.signal() condition.signalAll(). Can be used with ReentrantLock.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Java fibre (upcoming future)- one more layer on thread to use threads efficiently. It creates large number of memory efficient threads.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ReentrantLock lock = new ReentrantLock() //by default unfair lock
+#lock.lock() and lock.unlock() - same as synchronize block, but here we can lock unlock for other method from our method. 
+	We can have multiple time lock and unlock same lock object.
+#lock.tryLock() and lock.unlock() - lock.tryLock() returns boolean. We can do other task if return false.
+#Better practice is to always use finally for unlock().
+
+#fair lock - new ReentrantLock(true) - it picks task from queue
+#unfair lock - new ReentrantLock(false) - it pick any task. even it pick task which is ready to go in queue for better performance.
+#Some methods - getQueLength(), isHeldByCurrentThread(). newCondition()
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ReadWriteLock
+Here are two separate instances of lock - ReadLock and WriteLock. Multiple thread can access readlock but only one thread can access 
+writelockRead Lock and writeLock can not perform at a single time. 
+It is fair lock. It gives access to all available read thread to readlock then perform writelock from queue. 
+In between new read thread introduce while other are reading then it will go in queue and run after write lock, 
+otherwise write thread will be keep waiting.Good for frequent read nad write operation. e,g, movie ticket seat view and booking.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#thread.interrupt() - we can ask to stop other thread but doesn't guarantee that it will stop because of data integrity, 
+open connection and half operation 
+#Thread.currentthread.Isinterrupted() - we can do polling from running thread to check interrupt status of thread.
+#thread.interrupted() - check the flag and reset. 
+Recommended to set after interruptedException thrown.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Stopping thread - we can ask to stop other thread but doesn't guarantee that it will stop.
+1. thread.interrupt()
+2. threadpool.shotdownNow() 
+3. future.cancel(true)
+
+
+
+
+
+
+
+
+
+
