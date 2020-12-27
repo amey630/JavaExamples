@@ -49,10 +49,42 @@ Stopping thread - we can ask to stop other thread but doesn't guarantee that it 
 1. thread.interrupt()
 2. threadpool.shotdownNow() 
 3. future.cancel(true)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CountDownLatch class is a synchronization aid which allows one or more thread to wait until the mandatory operations are performed by other 
+threads. CountDownLatch is initialized with a given count of threads which are required to be completed before the main thread.
 
+A CyclicBarrier is a synchronizer that allows a set of threads to wait for each other to reach a common execution point, also called a barrier.
+CyclicBarriers are used in programs in which we have a fixed number of threads that must wait for each other to reach a common point 
+before continuing execution.
 
+Phaser works as CountDownLatch+CyclicBarrier. It has some other fearures also. It can register 
+and de-register from any running thread.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Synchronous queues are basically used for handoff purposes. They do not have any capacity and a 
+put operation is blocked until some other thread performs get operation.
 
+If we want to safely share a variable between two threads, we can put that variable in synchrounous
+ queue and let other thread take it from the queue.
+ We can say it is BlockingQueue of size 1.
+ ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ -Deadlock is occur when thread is waiting for a lock held by another thread or vice-versa.
+ -Difficult to detect at compile time due to multiple types of locks and thread sources.
+ -Can detect at runtime using thread dumps.
+ -Consistent ordering of locks can help avoid deadlock.
+ -Using timeout during lock aquisition can also help.
+ ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Data Race - Multiple thread access shared variable without synchronization.At least one thread is
+	writing to variable.
+-Practically one an issue mostly in java
+-Mainly because of system/language runtime.
 
+#Race condition -  Multiple thread access shared variable without synchronization. Value of 
+	variable depends upon execution order of threads. Here threads are racing to update value.
+-Common in multi-threaded application
+-Mainly because of how application is written and threads are scheduled.
+We can use synchronized block or Atomic variable to avoid it. 
+For concurrent hashmap we can use putIfAbsent
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 

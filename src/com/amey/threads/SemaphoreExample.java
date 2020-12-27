@@ -5,7 +5,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
 
-/*We have multiple 100 threads but we can make only 5 call to any API in that scenario we use Semaphore
+/*We have multiple 100 threads but we can make only 5 call to any API(or allow 5 threads 
+ * to go in critical region) in that scenario we use Semaphore
  * Semaphore maintains permits.semaphore.acquire() decrease permit and semaphore.release() increase permit.
  * If thread get permit from semaphore then it execute otherwise it wait to release() for other thread. 
  * 

@@ -1,5 +1,6 @@
 package com.amey.designPattern.observer;
 
+//Behavioral design pattern
 public class Youtube {
 
 	public static void main(String[] args) {
