@@ -1,14 +1,13 @@
-package com.amey.designPattern.builder;
+package com.amey.designPattern.creational.builder;
 
 public class Phone {
-	
-	
+
 	private String os;
 	private int ram;
 	private String processor;
 	private double screenSize;
 	private int battery;
-	
+
 	public Phone(String os, int ram, String processor, double screenSize, int battery) {
 		super();
 		this.os = os;
@@ -23,9 +22,5 @@ public class Phone {
 		return "Phone [os=" + os + ", ram=" + ram + ", processor=" + processor + ", screenSize=" + screenSize
 				+ ", battery=" + battery + "]";
 	}
-	
-	
-	
-	
 
 }

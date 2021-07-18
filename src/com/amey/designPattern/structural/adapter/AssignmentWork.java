@@ -1,8 +1,8 @@
-package com.amey.designPattern.adapter;
+package com.amey.designPattern.structural.adapter;
 
 public class AssignmentWork {
-	
-	private Pen  p;
+
+	private Pen p;
 
 	public void writeAssignment(String str) {
 		p.write(str);

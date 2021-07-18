@@ -1,4 +1,4 @@
-package com.amey.designPattern.adapter;
+package com.amey.designPattern.structural.adapter;
 
 public interface Pen {
 

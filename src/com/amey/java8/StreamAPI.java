@@ -72,7 +72,8 @@ public class StreamAPI {
 				System.out.println("\n---Flatten addition of all items of flatten list-"
 						+ "--"+mylist.stream().flatMap(x -> x.stream()).reduce(0, (c,e)->c+e));
 			
-				
+				//int d = 9234567890;
+				//System.out.println(d);
 				
 	}
 	private static void doubleIt(int i) {
