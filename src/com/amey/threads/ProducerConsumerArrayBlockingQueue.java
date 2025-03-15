@@ -10,7 +10,7 @@ public class ProducerConsumerArrayBlockingQueue {
 		
 		/*
 		 * ArrayBlockingQueue thread safe data structure, multiple producer and consumer
-		 * can access the queue simultaniously. 
+		 * can access the queue simultaneously.
 		 * If there is no space to put/ Nothing to take from queue - then it will wait.
 		 */
 		BlockingQueue<Integer> bq = new ArrayBlockingQueue<Integer>(10);
@@ -37,7 +37,7 @@ public class ProducerConsumerArrayBlockingQueue {
 					try {
 						Thread.sleep(2000);
 						bq.take();
-						System.out.println("consumer size"+bq.size());
+						System.out.println("consumer size--------"+bq.size());
 					} catch (InterruptedException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();

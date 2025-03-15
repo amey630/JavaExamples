@@ -6,10 +6,8 @@ import java.util.Queue;
 public class MyBlockingQueueWaitNotify<T> {
 	
 	int max;
-	Queue<T> queue = new LinkedList<T>();
-	Object takeCond = new Object();
-	Object putCond = new Object();
-	
+	Queue<T> queue;
+
 	public MyBlockingQueueWaitNotify(int max) {
 		queue = new LinkedList<>();
 		this.max = max;

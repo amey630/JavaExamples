@@ -13,7 +13,7 @@ public class FunctionaInterfaceExample {
 		BiConsumer<Integer, Integer> bi = (a,b) -> System.out.println(a+b);
 		bi.accept(5, 7);
 		
-		BiFunction<Integer, Integer, String> bif = (a,b) -> Integer.toString(a+b);
+		BiFunction<Integer, Integer, String> bif = (a,b) -> "StringValue="+(a+b);
 		System.out.println(bif.apply(5, 8));
 		
 		BinaryOperator<String> bio = (a,b)-> a+b;

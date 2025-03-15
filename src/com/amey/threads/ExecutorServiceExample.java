@@ -36,7 +36,7 @@ public class ExecutorServiceExample {
 		scThService.schedule(()->System.out.println("Task to run after 5 sec delay"), 5, TimeUnit.SECONDS);
 		
 		//Task to run repeatedly every 6 sec regardless of previous task complete
-		scThService.scheduleAtFixedRate(()->System.out.println("Task to run repeatedly every 2 sec wth initail dealy 3 sec"), 
+		scThService.scheduleAtFixedRate(()->System.out.println("Task to run repeatedly every 2 sec wth initial delay 3 sec"),
 				3, 2, TimeUnit.SECONDS);
 		
 		//Task to run repeatedly after 8 sec after previous task complete 
@@ -45,7 +45,7 @@ public class ExecutorServiceExample {
 						10, 8, TimeUnit.SECONDS);
 		
 		//**********************************************************************
-		//Single Thread Executor - There is only one thread, so it gives ensurity that task two will run after task one
+		//Single Thread Executor - There is only one thread, so it ensures that task two will run after task one
 		ExecutorService singleThreadService = Executors.newSingleThreadExecutor();
 		singleThreadService.execute(() ->  System.out.println("SingleThreadExecutor Thread Name : " + Thread.currentThread().getName()));
 		
