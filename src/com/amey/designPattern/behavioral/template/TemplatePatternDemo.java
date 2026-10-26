@@ -8,10 +8,10 @@ public class TemplatePatternDemo {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		FileDownload f= new CsvDownload();
+		FileDownload f = new CsvDownload();
 		f.download();
 		
-		FileDownload f2= new PdfDownload();
+		FileDownload f2 = new PdfDownload();
 		f2.download();
 
 	}

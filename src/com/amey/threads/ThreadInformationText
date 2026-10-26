@@ -33,7 +33,7 @@ ReentrantLock lock = new ReentrantLock() //by default unfair lock
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ReadWriteLock
 Here are two separate instances of lock - ReadLock and WriteLock. Multiple thread can access readlock but only one thread can access 
-writelockRead Lock and writeLock can not perform at a single time. 
+writelock. ReadLock and writeLock can not perform at a single time.
 It is fair lock. It gives access to all available read thread to readlock then perform writelock from queue. 
 In between new read thread introduce while other are reading then it will go in queue and run after write lock, 
 otherwise write thread will be keep waiting.Good for frequent read nad write operation. e,g, movie ticket seat view and booking.
